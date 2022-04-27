@@ -1,0 +1,17 @@
+.header {
+  background-color: black;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  .tituloHeader {
+    color: white;
+    font-family: "Orbitron";
+    font-size: 65px;
+    padding-top: 2%;
+    padding-bottom: 1.5%; }
+    .listaNavegacion {
+        font-family: "montserrat";
+        display: flex;
+        justify-content: space-around;
+        align-items: center; }
+}
