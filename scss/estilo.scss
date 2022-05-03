@@ -11,31 +11,30 @@ ul {
   display: flex;
   text-align: center;
   flex-direction: column; }
+  .tituloHeader {
+    color: white;
+    font-family: "Orbitron";
+    font-size: 65px;
+    padding-top: 2%;
+    padding-bottom: 1.5%; }
+    .barraBusqueda {
+      align-self: center;
+      width: 25%;
+      padding-bottom: 0.5%;
+      padding-top: 0.5;
+      margin-bottom: 2%;
+      margin-top: 2%; }
+      .listaNavegacion {
+        font-family: "montserrat";
+        display: flex;
+        justify-content: space-around;
+        align-items: center; }
 
-.tituloHeader {
-  color: white;
-  font-family: "Orbitron";
-  font-size: 65px;
-  padding-top: 2%;
-  padding-bottom: 1.5%; }
-
-.listaNavegacion {
-  font-family: "montserrat";
-  display: flex;
-  justify-content: space-around;
-  align-items: center; }
 
 .headerLink {
   color: white;
   text-decoration: none; }
 
-.barraBusqueda {
-  align-self: center;
-  width: 25%;
-  padding-bottom: 0.5%;
-  padding-top: 0.5;
-  margin-bottom: 2%;
-  margin-top: 2%; }
 
 .textoFoto {
   font-family: "raleway";
@@ -269,37 +268,47 @@ footer {
   font-family: "raleway";
   font-size: 17px; }
 
+.textoExperiencia,
+.textoFormulario {
+  @extend .textoPreguntas, .textoQuienes;
+  text-align: center; } 
+
 .tituloCompra,
 .tituloCosto,
-.tituloDonde,
-.tituloDemora {
+.tituloDonde {  
   font-family: "orbitron";
   font-size: 25px;
   color: #2d2d2d;
   padding-top: 2%; }
 
-/* quienes estilos*/
-.nombresPersonas {
-  font-family: "orbitron";
-  font-size: 17px;
-  color: #2d2d2d;
-  text-align: center;
-  padding-bottom: 2%; }
-
-.textoExperiencia,
-.textoFormulario {
-  font-family: "raleway";
-  font-size: 17px;
-  text-align: center; }
-
-.tituloQuedicen,
-.tituloContactanos {
+  @mixin font-color-padding {
   font-family: "orbitron";
   font-size: 25px;
-  text-align: center;
   color: #2d2d2d;
-  padding-top: 2%;
-  padding-bottom: 2%; }
+  padding-top: 2%; }
+
+  .tituloDemora {
+    @include font-color-padding;
+  }
+
+
+/* quienes estilos*/
+/* mapget */
+$estilos: (
+  color: #2d2d2d,
+  centro: center,
+  tFuente: 17px,
+  espaciado: 2%,
+  lFuente: "orbitron",
+);
+
+.nombresPersonas {
+  font-family: map-get ($estilos: lFuente);
+  font-size: map-get ($estilos: tFuente);
+  color: map-get ($estilos: color);
+  text-align: map-get ($estilos: center);
+  padding-bottom: map-get ($estilos: espaciado) 
+}
 
 /* estilos  contacto*/
 .email,
